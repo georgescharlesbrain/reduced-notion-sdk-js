@@ -38,5 +38,6 @@
     "forceConsistentCasingInFileNames": true
   },
 
-  "include": ["src/**/*", "test/**/*"]
+  "include": ["src/**/*", "test/**/*"]  
+  //, "examples/**/*" // examples need their own tsconfig.json otherwise errors occur when compiling
 }

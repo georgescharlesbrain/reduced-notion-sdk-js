@@ -217,101 +217,101 @@ export default class Client {
    * Notion API endpoints
    */
 
-  public readonly blocks = {
-    /**
-     * Retrieve block
-     */
-    retrieve: (
-      args: WithAuth<GetBlockParameters>
-    ): Promise<GetBlockResponse> => {
-      return this.request<GetBlockResponse>({
-        path: getBlock.path(args),
-        method: getBlock.method,
-        query: pick(args, getBlock.queryParams),
-        body: pick(args, getBlock.bodyParams),
-        auth: args?.auth,
-      })
-    },
+  // public readonly blocks = {
+  //   /**
+  //    * Retrieve block
+  //    */
+  //   retrieve: (
+  //     args: WithAuth<GetBlockParameters>
+  //   ): Promise<GetBlockResponse> => {
+  //     return this.request<GetBlockResponse>({
+  //       path: getBlock.path(args),
+  //       method: getBlock.method,
+  //       query: pick(args, getBlock.queryParams),
+  //       body: pick(args, getBlock.bodyParams),
+  //       auth: args?.auth,
+  //     })
+  //   },
 
-    /**
-     * Update block
-     */
-    update: (
-      args: WithAuth<UpdateBlockParameters>
-    ): Promise<UpdateBlockResponse> => {
-      return this.request<UpdateBlockResponse>({
-        path: updateBlock.path(args),
-        method: updateBlock.method,
-        query: pick(args, updateBlock.queryParams),
-        body: pick(args, updateBlock.bodyParams),
-        auth: args?.auth,
-      })
-    },
+  //   /**
+  //    * Update block
+  //    */
+  //   update: (
+  //     args: WithAuth<UpdateBlockParameters>
+  //   ): Promise<UpdateBlockResponse> => {
+  //     return this.request<UpdateBlockResponse>({
+  //       path: updateBlock.path(args),
+  //       method: updateBlock.method,
+  //       query: pick(args, updateBlock.queryParams),
+  //       body: pick(args, updateBlock.bodyParams),
+  //       auth: args?.auth,
+  //     })
+  //   },
 
-    /**
-     * Delete block
-     */
-    delete: (
-      args: WithAuth<DeleteBlockParameters>
-    ): Promise<DeleteBlockResponse> => {
-      return this.request<DeleteBlockResponse>({
-        path: deleteBlock.path(args),
-        method: deleteBlock.method,
-        query: pick(args, deleteBlock.queryParams),
-        body: pick(args, deleteBlock.bodyParams),
-        auth: args?.auth,
-      })
-    },
-    children: {
-      /**
-       * Append block children
-       */
-      append: (
-        args: WithAuth<AppendBlockChildrenParameters>
-      ): Promise<AppendBlockChildrenResponse> => {
-        return this.request<AppendBlockChildrenResponse>({
-          path: appendBlockChildren.path(args),
-          method: appendBlockChildren.method,
-          query: pick(args, appendBlockChildren.queryParams),
-          body: pick(args, appendBlockChildren.bodyParams),
-          auth: args?.auth,
-        })
-      },
+  //   /**
+  //    * Delete block
+  //    */
+  //   delete: (
+  //     args: WithAuth<DeleteBlockParameters>
+  //   ): Promise<DeleteBlockResponse> => {
+  //     return this.request<DeleteBlockResponse>({
+  //       path: deleteBlock.path(args),
+  //       method: deleteBlock.method,
+  //       query: pick(args, deleteBlock.queryParams),
+  //       body: pick(args, deleteBlock.bodyParams),
+  //       auth: args?.auth,
+  //     })
+  //   },
+  //   children: {
+  //     /**
+  //      * Append block children
+  //      */
+  //     append: (
+  //       args: WithAuth<AppendBlockChildrenParameters>
+  //     ): Promise<AppendBlockChildrenResponse> => {
+  //       return this.request<AppendBlockChildrenResponse>({
+  //         path: appendBlockChildren.path(args),
+  //         method: appendBlockChildren.method,
+  //         query: pick(args, appendBlockChildren.queryParams),
+  //         body: pick(args, appendBlockChildren.bodyParams),
+  //         auth: args?.auth,
+  //       })
+  //     },
 
-      /**
-       * Retrieve block children
-       */
-      list: (
-        args: WithAuth<ListBlockChildrenParameters>
-      ): Promise<ListBlockChildrenResponse> => {
-        return this.request<ListBlockChildrenResponse>({
-          path: listBlockChildren.path(args),
-          method: listBlockChildren.method,
-          query: pick(args, listBlockChildren.queryParams),
-          body: pick(args, listBlockChildren.bodyParams),
-          auth: args?.auth,
-        })
-      },
-    },
-  }
+  //     /**
+  //      * Retrieve block children
+  //      */
+  //     list: (
+  //       args: WithAuth<ListBlockChildrenParameters>
+  //     ): Promise<ListBlockChildrenResponse> => {
+  //       return this.request<ListBlockChildrenResponse>({
+  //         path: listBlockChildren.path(args),
+  //         method: listBlockChildren.method,
+  //         query: pick(args, listBlockChildren.queryParams),
+  //         body: pick(args, listBlockChildren.bodyParams),
+  //         auth: args?.auth,
+  //       })
+  //     },
+  //   },
+  // }
 
   public readonly databases = {
-    /**
-     * List databases
-     *
-     * @deprecated Please use `search`
-     */
-    list: (
-      args: WithAuth<ListDatabasesParameters>
-    ): Promise<ListDatabasesResponse> => {
-      return this.request<ListDatabasesResponse>({
-        path: listDatabases.path(),
-        method: listDatabases.method,
-        query: pick(args, listDatabases.queryParams),
-        body: pick(args, listDatabases.bodyParams),
-        auth: args?.auth,
-      })
-    },
+    // /**
+    //  * List databases
+    //  *
+    //  * @deprecated Please use `search`
+    //  */
+    // list: (
+    //   args: WithAuth<ListDatabasesParameters>
+    // ): Promise<ListDatabasesResponse> => {
+    //   return this.request<ListDatabasesResponse>({
+    //     path: listDatabases.path(),
+    //     method: listDatabases.method,
+    //     query: pick(args, listDatabases.queryParams),
+    //     body: pick(args, listDatabases.bodyParams),
+    //     auth: args?.auth,
+    //   })
+    // },
 
     /**
      * Retrieve a database
@@ -435,93 +435,93 @@ export default class Client {
     },
   }
 
-  public readonly users = {
-    /**
-     * Retrieve a user
-     */
-    retrieve: (args: WithAuth<GetUserParameters>): Promise<GetUserResponse> => {
-      return this.request<GetUserResponse>({
-        path: getUser.path(args),
-        method: getUser.method,
-        query: pick(args, getUser.queryParams),
-        body: pick(args, getUser.bodyParams),
-        auth: args?.auth,
-      })
-    },
+  // public readonly users = {
+  //   /**
+  //    * Retrieve a user
+  //    */
+  //   retrieve: (args: WithAuth<GetUserParameters>): Promise<GetUserResponse> => {
+  //     return this.request<GetUserResponse>({
+  //       path: getUser.path(args),
+  //       method: getUser.method,
+  //       query: pick(args, getUser.queryParams),
+  //       body: pick(args, getUser.bodyParams),
+  //       auth: args?.auth,
+  //     })
+  //   },
 
-    /**
-     * List all users
-     */
-    list: (args: WithAuth<ListUsersParameters>): Promise<ListUsersResponse> => {
-      return this.request<ListUsersResponse>({
-        path: listUsers.path(),
-        method: listUsers.method,
-        query: pick(args, listUsers.queryParams),
-        body: pick(args, listUsers.bodyParams),
-        auth: args?.auth,
-      })
-    },
+  //   /**
+  //    * List all users
+  //    */
+  //   list: (args: WithAuth<ListUsersParameters>): Promise<ListUsersResponse> => {
+  //     return this.request<ListUsersResponse>({
+  //       path: listUsers.path(),
+  //       method: listUsers.method,
+  //       query: pick(args, listUsers.queryParams),
+  //       body: pick(args, listUsers.bodyParams),
+  //       auth: args?.auth,
+  //     })
+  //   },
 
-    /**
-     * Get details about bot
-     */
-    me: (args: WithAuth<GetSelfParameters>): Promise<GetSelfResponse> => {
-      return this.request<GetSelfResponse>({
-        path: getSelf.path(),
-        method: getSelf.method,
-        query: pick(args, getSelf.queryParams),
-        body: pick(args, getSelf.bodyParams),
-        auth: args?.auth,
-      })
-    },
-  }
+  //   /**
+  //    * Get details about bot
+  //    */
+  //   me: (args: WithAuth<GetSelfParameters>): Promise<GetSelfResponse> => {
+  //     return this.request<GetSelfResponse>({
+  //       path: getSelf.path(),
+  //       method: getSelf.method,
+  //       query: pick(args, getSelf.queryParams),
+  //       body: pick(args, getSelf.bodyParams),
+  //       auth: args?.auth,
+  //     })
+  //   },
+  // }
 
-  public readonly comments = {
-    /**
-     * Create a comment
-     */
-    create: (
-      args: WithAuth<CreateCommentParameters>
-    ): Promise<CreateCommentResponse> => {
-      return this.request<CreateCommentResponse>({
-        path: createComment.path(),
-        method: createComment.method,
-        query: pick(args, createComment.queryParams),
-        body: pick(args, createComment.bodyParams),
-        auth: args?.auth,
-      })
-    },
+  // public readonly comments = {
+  //   /**
+  //    * Create a comment
+  //    */
+  //   create: (
+  //     args: WithAuth<CreateCommentParameters>
+  //   ): Promise<CreateCommentResponse> => {
+  //     return this.request<CreateCommentResponse>({
+  //       path: createComment.path(),
+  //       method: createComment.method,
+  //       query: pick(args, createComment.queryParams),
+  //       body: pick(args, createComment.bodyParams),
+  //       auth: args?.auth,
+  //     })
+  //   },
 
-    /**
-     * List comments
-     */
-    list: (
-      args: WithAuth<ListCommentsParameters>
-    ): Promise<ListCommentsResponse> => {
-      return this.request<ListCommentsResponse>({
-        path: listComments.path(),
-        method: listComments.method,
-        query: pick(args, listComments.queryParams),
-        body: pick(args, listComments.bodyParams),
-        auth: args?.auth,
-      })
-    },
-  }
+  //   /**
+  //    * List comments
+  //    */
+  //   list: (
+  //     args: WithAuth<ListCommentsParameters>
+  //   ): Promise<ListCommentsResponse> => {
+  //     return this.request<ListCommentsResponse>({
+  //       path: listComments.path(),
+  //       method: listComments.method,
+  //       query: pick(args, listComments.queryParams),
+  //       body: pick(args, listComments.bodyParams),
+  //       auth: args?.auth,
+  //     })
+  //   },
+  // }
 
-  /**
-   * Search
-   */
-  public search = (
-    args: WithAuth<SearchParameters>
-  ): Promise<SearchResponse> => {
-    return this.request<SearchResponse>({
-      path: search.path(),
-      method: search.method,
-      query: pick(args, search.queryParams),
-      body: pick(args, search.bodyParams),
-      auth: args?.auth,
-    })
-  }
+  // /**
+  //  * Search
+  //  */
+  // public search = (
+  //   args: WithAuth<SearchParameters>
+  // ): Promise<SearchResponse> => {
+  //   return this.request<SearchResponse>({
+  //     path: search.path(),
+  //     method: search.method,
+  //     query: pick(args, search.queryParams),
+  //     body: pick(args, search.bodyParams),
+  //     auth: args?.auth,
+  //   })
+  // }
 
   /**
    * Emits a log message to the console.
