@@ -1,3 +1,13 @@
+Part of [curabolist-pvt](https://github.com/georgescharlesbrain/curabolist-pvt)
+
+
+
+
+
+
+
+
+
 <div align="center">
 	<h1>Notion SDK for JavaScript</h1>
 	<p>
